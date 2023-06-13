@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'font';
+    src: url('/4-Integration/SF-Pro-Rounded-Semibold.otf') format('opentype');
+    /* Additional font properties (optional) */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'font', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: url(/4-Integration/SVGs/repeating-triangles.svg);
+    /* background-size: 2082px; */
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+#fullscreen {
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.main-box {
+    width: 700px;
+    display: block;
+    border-radius: 40px;
+    position: relative;
+    top: 5px;
+    box-shadow: 0px 0px 20px 20px #0000002e;
+}
+
+.login-img {
+    position: absolute;
+    left: 340px;
+    ;
+    height: 533px;
+    width: 360px;
+    right: 362px;
+    border-radius: 0px 38px 38px 0px;
+}
+
+.login-icon {
+    transform: scale(0.24);
+    position: absolute;
+    top: -175px;
+    left: -88.3px;
+    z-index: 3;
+}
+
+.login {
+    background-color: white;
+    display: block;
+    width: 340px;
+    height: 490px;
+    border-radius: 35px 0px 0px 35px;
+    position: relative;
+    padding-top: 43px;
+}
+
+#login-form {
+    transform: scale(0.85);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    top: 110px;
+    left: 170px;
+    width: 0px;
+    height: 0px;
+}
+
+.login-input {
+    margin-top: 35px;
+    margin-bottom: 0px;
+    color: #000000;
+}
+
+.login-btn {
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 40px;
+}

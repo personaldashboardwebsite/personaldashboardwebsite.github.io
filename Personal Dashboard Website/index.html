@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard Website</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/2-css/login.css">
+    <link rel="stylesheet" href="/2-css/loader.css">
+    <link rel="stylesheet" href="/2-css/app.css">
+    <style>
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="/4-Integration/Favicons/plant.ico">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="fullscreen">
+        <div class="container-loader">
+            <div class="spinner">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="bar4"></div>
+                <div class="bar5"></div>
+                <div class="bar6"></div>
+                <div class="bar7"></div>
+                <div class="bar8"></div>
+                <div class="bar9"></div>
+                <div class="bar10"></div>
+                <div class="bar11"></div>
+                <div class="bar12"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <div class="container">
+        <div class="main-box">
+            <img class="login-img" src="/4-Integration/dragon-scales.png" alt="" srcset="">
+            <img class="login-icon" src="/4-Integration/SVGs/software-engineer.svg" alt="" srcset="">
+            <div class="login">
+                <h1
+                    style="transform: scale(1); position: relative; top: 115px; display: flex;justify-content: center; color: #000000;">
+                    Login</h1>
+                <form id="login-form">
+                    <h3 class="login-input">Username</h3>
+                    <input style="   position: relative;
+                    left: 4px;background-color: transparent; border: 1px solid rgb(0, 0, 0); border-radius: 4px;"
+                        type="text" id="username" required>
+                    <br>
+                    <h3 class="login-input">Password</h3>
+                    <input style="   position: relative;
+                    left: 4px;background-color: transparent; border: 1px solid rgb(0, 0, 0); border-radius: 4px;"
+                        id="password" type="password" required>
+                    <br>
+                    <input
+                        style="background-color: #fff; color: black; border: 1px solid #000000; border-radius: 4px; width: 60px; padding-top: 4px;  padding-bottom: 4px; cursor: pointer; font-family: 'font', sans-serif;"
+                        class="login-btn login-input " type="submit" value="Login">
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- APP -->
+
+    <!-- Menu bar -->
+
+    <div id="header">
+
+
+        <h1>Personal Dashboard Website</h1>
+        <div id="container1" onclick="this.classList.toggle('active')">
+
+
+            <label for="hamburger">
+
+                <input type="checkbox" id="hamburger" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+
+
+
+        </div>
+        <div id="menubar">
+            <div class="m-container">
+                <button id="add-resource-list-btn" onclick="showCreateResourceListModal()"><img class="plus"
+                        src="/4-Integration/SVGs/plus.svg" alt="" srcset=""></button>
+                <h3>Create Resource List</h3>
+            </div>
+            <input id="taskInput" type="text" placeholder="                  Enter a task">
+            <button id="addButton">Add Task</button>
+        </div>
+    </div>
+
+    <!-- End Menu Bar-->
+
+    <div class="overlay" onclick="hideCreateResourceListModal()"></div>
+    <div id="create-resource-list-modal" class="hidden">
+        <h2>Create Resource List</h2>
+        <input type="text" id="resource-list-name-input" placeholder="Enter Resource List Name">
+        <button id="create-resource-list-button" style="    position: relative; top: 16px;"
+            onclick="createResourceList()">Create</button>
+    </div>
+
+    <div id="resource-lists-container">
+        <div class="resource-list-container">
+            <h1 class="resource-list-title">Daily Checks</h1>
+            <button class="add-resource-btn">Add Resource</button>
+            <div class="resource-list">
+
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/gmail.ico" alt="Favicon">
+                    <a href="https://mail.google.com" target="_blank">Gmail</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/Instagram.ico" alt="Favicon">
+                    <a href="https://instagram.com/mistystar_wizard" target="_blank">Instagram</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="resource-list-container">
+            <h1 class="resource-list-title">Quick Links</h1>
+            <button class="add-resource-btn">Add Resource</button>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/notion.ico" alt="Favicon">
+                    <a href="https://notion.so" target="_blank">Notion</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/faviconkit.png" alt="Favicon">
+                    <a href="https://faviconkit.com/" target="_blank">Favicon</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/drive.png" alt="Favicon">
+                    <a href="https://drive.google.com/" target="_blank">Drive</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/toffeeshare.ico" alt="Favicon">
+                    <a href="https://toffeeshare.com/" target="_blank">Toffee Share</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/flaticon.ico" alt="Favicon">
+                    <a href="https://favicongrabber.com/" target="_blank">Flaticon</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/dribbble.png" alt="Favicon">
+                    <a href="https://dribbble.com/" target="_blank">Dribbble</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="resource-list-container">
+            <h1 class="resource-list-title">Problem Solving Websites</h1>
+            <button class="add-resource-btn">Add Resource</button>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/chatgpt.ico" alt="Favicon">
+                    <a href="https://chat.openai.com" target="_blank">ChatGPT</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/perplexity.ico" alt="Favicon">
+                    <a href="https://perplexity.ai/" target="_blank">Perplexity</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/aicyclopedia.png" alt="Favicon">
+                    <a href="https://aicyclopedia.com/" target="_blank">Aicyclopedia</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/futurepedia.ico" alt="Favicon">
+                    <a href="https://perplexity.ai/" target="_blank">Futurepedia</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/tutoria.png" alt="Favicon">
+                    <a href="https://tutoria.me/" target="_blank">Tutoria</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/learn.uno.png" alt="Favicon">
+                    <a href="https://learn.uno/" target="_blank">Learn.uno</a>
+                </div>
+            </div>
+        </div>
+        <div class="resource-list-container">
+            <h1 class="resource-list-title">Learn Coding</h1>
+            <button class="add-resource-btn">Add Resource</button>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/cwh.jpg" alt="Favicon">
+                    <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR"
+                        target="_blank">JavaScript [Harry]</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/js-website.png" alt="Favicon">
+                    <a href="https://javascript.info/" target="_blank">JavaScript [Website]</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/theodinproject.png" alt="Favicon">
+                    <a href="https://www.theodinproject.com/" target="_blank">Odin Project</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="resource-list-container">
+            <h1 class="resource-list-title">Learn Design</h1>
+            <button class="add-resource-btn">Add Resource</button>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/apple.png" alt="Favicon">
+                    <a href="https://developer.apple.com/design/" target="_blank">By Apple</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/google.png" alt="Favicon">
+                    <a href="https://web.dev/learn/" target="_blank">By Google</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/thelawsofux.png" alt="Favicon">
+                    <a href="https://thelawsofux.com/" target="_blank">The Laws Of UX</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/growth.design.png" alt="Favicon">
+                    <a href="https://growth.design/" target="_blank">Growth.Design</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="resource-list-container">
+            <h1 class="resource-list-title">Design Library/Icons,Illustrations etc:</h1>
+            <button class="add-resource-btn">Add Resource</button>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/toools.design.png" alt="Favicon">
+                    <a href="https://www.toools.design/" target="_blank">Toools.design</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/superdesigner.png" alt="Favicon">
+                    <a href="https://superdesigner.co/" target="_blank">Super Designer</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/fffuel.png" alt="Favicon">
+                    <a href="https://fffuel.co/" target="_blank">Fffuel</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/designresources.png" alt="Favicon">
+                    <a href="https://designresourc.es/" target="_blank">Design Resources</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/thestocks.png" alt="Favicon">
+                    <a href="https://thestocks.im/" target="_blank">The Stocks</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/superdesigner.png" alt="Favicon">
+                    <a href="https://uihut.com/" target="_blank">UIHut</a>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="resource-list-container">
+            <h1 class="resource-list-title">Useful Tools</h1>
+            <button class="add-resource-btn">Add Resource</button>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/tinywow.png" alt="Favicon">
+                    <a href="https://www.tinywow.com/" target="_blank">Tiny Wow</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/pixelcut.png" alt="Favicon">
+                    <a href="https://pixelcut.ai" target="_blank">Pixel Cut</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/10minutemail.png" alt="Favicon">
+                    <a href="https://10minutemail.net/" target="_blank">10minutemail</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/autodraw.png" alt="Favicon">
+                    <a href="https://autodraw.com/" target="_blank">Auto Draw</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/snapdrop.png" alt="Favicon">
+                    <a href="https://snapdrop.net/" target="_blank">Snap Drop</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/looka.png" alt="Favicon">
+                    <a href="https://looka.com/" target="_blank">Looka</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/jitter.png" alt="Favicon">
+                    <a href="https://jtter.video/" target="_blank">Jitter</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/goodbreif.png" alt="Favicon">
+                    <a href="https://goodbrief.io/" target="_blank">Good Brief</a>
+                </div>
+                <div class="resource-card">
+                    <img src="/4-Integration/Favicons/png2svg.svg" alt="Favicon">
+                    <a href="https://png2svg.com/" target="_blank">PNG => SVG</a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div style=" width: 20px; height: 23px;" class="transparent">
+
+        </div>
+    </div>
+
+
+    </div>
+    <div class="todo">
+        <h1 style="color:white; margin: 17px 32%;">Todo </h1>
+        <p id="todoH1" style="color: #575757; position: relative; top: 40%; left: 35%;">Empty</p>
+
+        <ul id="taskList"></ul>
+
+
+</body>
+</div>
+<div id="resource-container" class="hidden">
+    <h2 style="margin-top: -2px;">Add Resource</h2>
+    <input type="text" id="heading-input" placeholder="Enter Heading">
+    <input type="text" id="link-input" placeholder="Enter Link">
+    <input type="file" id="favicon-input">
+    <button onclick="addResource()" id="add-resource-btn">Add</button>
+    <button id="cancel-add-resource-btn">Cancel</button>
+</div>
+
+<script>
+
+    $(window).on('load', function () {
+        // This function will be executed when all resources have finished loading
+
+        // Hide the loader element
+        $("#fullscreen").hide();
+    });
+
+
+</script>
+<script src="/3-js/script.js">
+
+</script>
+<script src="/3-js/index.js"></script>
+</body>
+
+</html>
