@@ -1,7 +1,9 @@
 * {
     font-family: 'font', sans-serif;
 }
-
+body::-webkit-scrollbar{
+    display: none;
+  }
 button {
     background-color: #72037257;
     border: none;
@@ -21,87 +23,6 @@ a {
     color: white !important;
 }
 
-@media screen and (max-width:768px) {
-    body {
-        background-image: none;
-        background-color: white;
-        overflow-x: hidden;
-    }
-
-    .login-img {
-        display: none;
-    }
-
-    .main-box {
-        border-radius: 0px;
-        box-shadow: none;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        width: 335px;
-    }
-
-    .login {
-        border-radius: 0px;
-    }
-
-    .login-icon {
-        transform: scale(0.24);
-        position: absolute;
-        top: -175px;
-        /* left: -88.3px; */
-        z-index: 3;
-    }
-
-    #header h1 {
-        position: absolute !important;
-        top: -11px !important;
-        left: -26px !important;
-        transform: scale(0.65);
-        width: 414px;
-    }
-
-    #container1 {
-        position: absolute;
-        top: 20px;
-        left: 3px;
-        transform: scale(0.3);
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    #menubar {
-        height: 92vh;
-    }
-    #resource-lists-container{
-        margin-bottom: 20px;
-    position: absolute;
-    top: 319px;
-    left: -98px;
-    width: 96vw !important;
-    }
-    .resource-card{
-        width: 34vw !important;
-    }
-    .todo{
-        display: none !important;
-    }
-    .resource-list{
-        width: 94vw !important;
-        position: relative;
-        left: 5px;
-    }
-    .resource-list-container{
-        position: relative;
-        left: 103px !important;
-        width: 98vw !important;
-    }
-    #taskInput{
-        display: none;
-    }
-    #addButton{
-        display: none;
-    }
-}
 
 #header {
     position: fixed;
@@ -446,8 +367,6 @@ input[type="checkbox"] {
     display: flex;
     flex-wrap: wrap;
 }
-
-.resource-list-container:not(:last-child) {}
 
 
 .add-resource-btn {
