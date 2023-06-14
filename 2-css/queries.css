@@ -1,6 +1,5 @@
+/* 90% pc screen */
 @media  screen and (min-width:1337px){
-
-
 .resource-list-container {
     width: 84vw;
 }
@@ -8,7 +7,8 @@
     width: 83vw;
 }
 }
-@media  screen and (min-width:1181px) and (max-width:1337px) {
+/* 100% pc screen */
+@media  screen and (min-width:1177px) and (max-width:1337px) {
 .todo{
     width: 171px;
     height: 90.5vh;
@@ -24,7 +24,20 @@
     width: 83.4vw;
 }
 }
-@media screen and (max-width:768px) {
+
+/* laptop */
+@media screen and (min-width:768px) and (max-width:1024px){
+    .todo{
+        width: 174px;
+    height: 92vh;
+    }
+    .resource-card{
+        width: 150px;
+    }
+    
+}
+/* tablet */
+@media screen and (min-width:425px) and (max-width:768px) {
     body {
         background-image: none;
         background-color: white;
@@ -82,7 +95,7 @@
     width: 96vw !important;
     }
     .resource-card{
-        width: 34vw !important;
+        width: 18vw;
     }
     .todo{
         display: none !important;
@@ -107,9 +120,13 @@
         display: none;
     }
 }
-@media screen and (max-width:320px) {
+/* mobile */
+@media screen and (max-width:425px) {
     .resource-list-title{
         font-size: 26px;
+    }
+    .resource-card{
+        width:34vw;
     }
     
 }
