@@ -265,4 +265,7 @@ addButton.addEventListener("click", function () {
   });
 });
 
-
+let body = document.getElementById('body')
+window.addEventListener("load" , function (){
+body.style.overflow = "scroll"
+})

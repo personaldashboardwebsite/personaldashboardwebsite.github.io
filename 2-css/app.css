@@ -1,9 +1,14 @@
 * {
     font-family: 'font', sans-serif;
 }
+
+body{
+    overflow: hidden;
+}
 body::-webkit-scrollbar{
     display: none;
   }
+
 button {
     background-color: #72037257;
     border: none;
