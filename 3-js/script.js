@@ -1,63 +1,19 @@
-function handleFormSubmit(event) {
-  event.preventDefault(); // Prevent the form from submitting and refreshing the page
 
-  // Get the entered username and password
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  console.log(password);
-
-  // Validate the username/password
-  if (username === "1" && password === "1") {
-    // Remove the login form
-    var loginForm = document.getElementById("login-form");
-    var addresourcelistbtn = document.getElementById('add-resource-list-btn');
-    var resourceListContainer = document.getElementById('resource-lists-container');
-    var plusbtn = document.getElementById('add-resource-list-btn');
-    var header = document.getElementById('header');
-    var menubar = document.querySelector('#menubar');
-    var todo = document.querySelector('.todo');
+var loginForm = document.getElementById("login-form");
+var addresourcelistbtn = document.getElementById('add-resource-list-btn');
+var resourceListContainer = document.getElementById('resource-lists-container');
+var plusbtn = document.getElementById('add-resource-list-btn');
+var header = document.getElementById('header');
+var menubar = document.querySelector('#menubar');
+var todo = document.querySelector('.todo');
 
 
-
-    addresourcelistbtn.style.display = "block";
-    resourceListContainer.style.display = "block";
-    plusbtn.style.display = "flex";
-    header.style.display = "flex";
-    menubar.style.display = "block";
-    todo.style.display = "block"
-    loginForm.parentNode.parentNode.removeChild(loginForm.parentNode);
-
-    // Select the first image and remove it
-    var image1 = document.getElementsByClassName('login-img')[0];
-    if (image1 && image1.parentNode) {
-      image1.parentNode.removeChild(image1);
-    }
-
-    // Select the second image and remove it
-    var image2 = document.getElementsByClassName('login-icon')[0];
-    if (image2 && image2.parentNode) {
-      image2.parentNode.removeChild(image2);
-    }
-
-    // Remove the box shadow from .main-box class
-    var mainBox = document.querySelector('.main-box');
-    mainBox.style.boxShadow = 'none';
-
-    // Remove the SVG background
-    document.body.style.backgroundImage = "none";
-
-    // Render the new SVG background
-    // Set the SVG background image
-    document.body.style.backgroundImage = "url(/4-Integration/SVGs/endless-constellation.svg)";
-    document.body.style.backgroundSize = "auto";
-    document.body.style.backgroundRepeat = "repeat";
-
-    // Perform further actions here (e.g., redirect to another page)
-  } else {
-    alert("Invalid username or password");
-  }
-}
-
+addresourcelistbtn.style.display = "block";
+resourceListContainer.style.display = "block";
+plusbtn.style.display = "flex";
+header.style.display = "flex";
+menubar.style.display = "block";
+todo.style.display = "block"
 // Retrieve the necessary elements from the DOM
 const taskInput = document.getElementById("taskInput");
 const addButton = document.getElementById("addButton");
@@ -75,8 +31,7 @@ function deleteTask(event) {
 addButton.addEventListener("click", addTask);
 
 // Add form submit event listener
-var loginForm = document.getElementById("login-form");
-loginForm.addEventListener("submit", handleFormSubmit);
+
 
 // Menu bar
 const element1 = document.getElementById('hamburger');
@@ -169,8 +124,8 @@ function createResourceList() {
 
   addResourceBtn.addEventListener("click", function () {
     // showAddResourceModal();
-  let resourcecontainer =  document.getElementById('resource-container');
-  resourcecontainer.style.display = "block";
+    let resourcecontainer = document.getElementById('resource-container');
+    resourcecontainer.style.display = "block";
   });
 
 
@@ -214,7 +169,7 @@ function showAddResource() {
   document.body.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
 }
 document.getElementById('add-resource-list-btn').addEventListener("click", function () {
-showCreateResourceListModal();
+  showCreateResourceListModal();
 });
 
 //Todo
@@ -266,6 +221,6 @@ addButton.addEventListener("click", function () {
 });
 
 let body = document.getElementById('body')
-window.addEventListener("load" , function (){
-body.style.overflow = "scroll"
+window.addEventListener("load", function () {
+  body.style.overflow = "scroll"
 })
