@@ -142,10 +142,10 @@ input[type="checkbox"] {
 .todo {
     background-color: #2E2E2E;
     position: fixed;
-    top: 75px;
+    top: 77px;
     left: 10px;
-    width: 200px;
-    height: 91.6vh;
+    width: 213px;
+    height: 89.9vh;
     display: none;
     border-radius: 8px;
 }
@@ -303,7 +303,7 @@ input[type="checkbox"] {
     padding: 10px;
     flex-grow: 0;
     flex-shrink: 0;
-    width: 153px;
+    width: 181px;
     margin: 12px 10px 10px 10px;
 }
 
