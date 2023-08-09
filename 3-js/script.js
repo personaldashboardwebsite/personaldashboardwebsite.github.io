@@ -1,4 +1,10 @@
+//Body Background
 
+let bdy = document.getElementById('body')
+window.addEventListener("load", function () {
+  bdy.style.overflow = "scroll"
+  bdy.style.background = "url(/4-Integration/SVGs/endless-constellation.svg)"
+})
 var loginForm = document.getElementById("login-form");
 var addresourcelistbtn = document.getElementById('add-resource-list-btn');
 var resourceListContainer = document.getElementById('resource-lists-container');
@@ -58,6 +64,8 @@ function createResourceList() {
 
   const resourceListContainer = document.createElement("div");
   resourceListContainer.className = "resource-list-container";
+
+  //Body Background
 
   const resourceListTitle = document.createElement("h1");
   resourceListTitle.className = "resource-list-title";

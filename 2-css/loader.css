@@ -4,7 +4,9 @@
     background-color: white;
     display: flex;
     flex-wrap: wrap;
+    position: absolute;
     justify-content: center;
+    z-index: 45;
 }
 .container-loader {
     position: absolute;

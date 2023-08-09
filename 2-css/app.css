@@ -7,7 +7,7 @@ font-family: 'SF', 'Sans-Serif';
 }
 
 body{
-    background: url(/4-Integration/SVGs/endless-constellation.svg);
+    /* background: url(/4-Integration/SVGs/endless-constellation.svg); */
 
 }
 body::-webkit-scrollbar{
