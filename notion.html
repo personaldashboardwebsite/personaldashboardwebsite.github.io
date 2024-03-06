@@ -34,12 +34,12 @@
 
 
         .div2 {
-            display: inline;
             left: 68px;
-            top: -9px;
-            transform: scale(0.927);
+            top: -7.4px;
+            transform: scale(0.935);
             border-radius: 18px;
         }
+
 
         .clockbox {
             width: 100px;
@@ -104,7 +104,7 @@
         #hour,
         #minute {
             transform-origin: 300px 300px;
-            transition: transform 1s linear;
+            transition: transform 1s ease-in-out;
         }
 
         #second {
@@ -231,7 +231,7 @@
         var SECONDHAND2 = document.querySelector("#Seconds");
         var date = new Date();
 
-        
+
         setInterval(() => {
             var date = new Date();
 
