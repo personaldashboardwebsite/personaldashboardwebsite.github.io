@@ -6,290 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css" media="all">
-    <script src="script.js" defer></script>
+
     <style>
+        * {
+            margin: 0;
+        }
+
+        @font-face {
+            font-family: uni-sans;
+            src: url(/4-Integration/Notion/Uni\ Sans\ Thin.otf);
+        }
+
         body {
-            background-color: #1a1a1aff;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: nowrap;
-            width: 724px;
-            position: absolute;
-            left: 5%;
-            top: 36px;
-            transform: scale(1.3);
+            margin: 0;
+            font-family: uni-sans;
         }
 
-        .div1 {
-            border: none;
-            border-radius: 20px;
-            background-color: #303030ff;
-            width: 28%;
-            height: 100%;
-            position: relative;
-            left: 70px;
+        h1 {
+            padding: 20px;
         }
 
-
-
-        .div2 {
-            left: 68px;
-            top: -7.4px;
-            transform: scale(0.935);
-            border-radius: 18px;
-        }
-
-
-        .clockbox {
-            width: 100px;
-        }
-
-        #clock {
-            width: 200%;
-            height: 196px;
-        }
-
-        /* Clock styles */
-        .circle {
-            fill: none;
-            stroke: #fff;
-            stroke-width: 9;
-            stroke-miterlimit: 10;
-        }
-
-        .mid-circle {
-            fill: #fff;
-        }
-
-        .hour-marks {
-            fill: none;
-            stroke: #fff;
-            stroke-width: 9;
-            stroke-miterlimit: 10;
-        }
-
-        .hour-arm {
-            fill: none;
-            stroke: #fff;
-            stroke-width: 17;
-            stroke-miterlimit: 10;
-        }
-
-        .minute-arm {
-            fill: none;
-            stroke: #fff;
-            stroke-width: 11;
-            stroke-miterlimit: 10;
-        }
-
-        .second-arm {
-            fill: none;
-            stroke: #990a00;
-            stroke-width: 4;
-            stroke-miterlimit: 10;
-        }
-
-        /* Transparent box ensuring arms center properly. */
-        .sizing-box {
-            fill: none;
-        }
-
-        #dateAndTime {
-            color: red
-        }
-
-        /* Make all arms rotate around the same center point. */
-        /* Optional: Use transition for animation. */
-        #hour,
-        #minute {
-            transform-origin: 300px 300px;
-            transition: transform 1s ease-in-out;
-        }
-
-        #second {
-            transform-origin: 300px 300px;
-            transition: transform 1s ease-in-out;
-        }
-
-        #clock2 h2 {
-            position: static;
-            display: block;
-            color: #404040;
-            text-align: center;
-            margin: 10px 0;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.4em;
-            font-size: 0.8em;
-        }
-
-        #clock2 #time {
-            display: flex;
-            justify-content: center;
-
-        }
-
-        #clock2 #time div {
-            position: relative;
-            margin: 0 5px;
-
-        }
-
-        #clock2 #time div span {
-            position: relative;
-            display: block;
-            width: 100px;
-            height: 80px;
-            background: #2196f3;
-            color: #fff;
-            font-weight: 300;
-            display: flex;
+        .div {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            background-color: antiquewhite;
+            display: none;
             justify-content: center;
             align-items: center;
-            font-size: 3em;
-            z-index: 10;
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
+            flex-direction: column;
         }
 
-        #clock2 #time div span:nth-child(2) {
-            height: 30px;
-            font-size: 0.7em;
-            letter-spacing: 0.2em;
-            font-weight: 500;
-            z-index: 9;
-            box-shadow: none;
-            background: #127fd6;
-            text-transform: unset;
+        #div1 {
+            display: flex;
         }
 
-        #clock2 #time div:last-child span {
-            background: #ff006a;
+        button {
+            position: relative;
+            padding: 2px 5px 1px 5px;
+            font-size: 16px;
+            background: transparent;
+            border: 1px solid black;
+            border-radius: 5px;
         }
 
-        #clock2 #time div:last-child span:nth-child(2) {
-            background: #ec0062;
+        .button {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            bottom: 13px;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="div1">
-        <main class="main">
-            <div class="clockbox">
-                <svg id="clock" xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
-                    <g id="face">
-                        <circle class="circle" cx="300" cy="300" r="253.9" />
-                        <path class="hour-marks"
-                            d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6" />
-                        <circle class="mid-circle" cx="300" cy="300" r="16.2" />
-                    </g>
-                    <g id="hour">
-                        <path class="hour-arm" d="M300.5 298V142" />
-                        <circle class="sizing-box" cx="300" cy="300" r="253.9" />
-                    </g>
-                    <g id="minute">
-                        <path class="minute-arm" d="M300.5 298V67" />
-                        <circle class="sizing-box" cx="300" cy="300" r="253.9" />
-                    </g>
-                    <g id="second">
-                        <path class="second-arm" d="M300.5 350V55" />
-                        <circle class="sizing-box" cx="300" cy="300" r="253.9" />
-                    </g>
-                </svg>
-
-
-            </div><!-- .clockbox -->
-        </main>
+    <div class="button">
+        <button onclick="showRandomDiv()">Show Random Div</button>
     </div>
-    <div class="div2" id="ww_9bd2f9a96f920" v='1.3' loc='id'
-        a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl4572"],"font":"Times","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#282828","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
-        <a href="https://weatherwidget.org/" id="ww_9bd2f9a96f920_u" target="_blank">Html weather widget</a>
-    </div>
-    <script async src="https://app2.weatherwidget.org/js/?id=ww_9bd2f9a96f920">
 
-    </script>
+    <div id="div1" class="div">
+        <img src="/4-Integration/Notion/blender.png" alt="" srcset="">
+        <h1>Blender Day</h1>
+    </div>
+    <div id="div2" class="div">
+        <img src="/4-Integration/Notion/ui.png" alt="">
+        <h1>UI Day</h1>
+    </div>
+    <div id="div3" class="div">
+        <img src="/4-Integration/Notion/photo.png" alt="">
+        <h1>Image Day</h1>
+    </div>
+    <div id="div4" class="div">
+        <img src="/4-Integration/Notion/python.png" alt="">
+        <h1>Python Day</h1>
+    </div>
+    <div id="div5" class="div">
+        <img src="/4-Integration/Notion/cyber.png" alt="">
+        <h1>Cyber Security Day</h1>
+    </div>
+    <div id="div6" class="div">
+        <img src="/4-Integration/Notion/books.png" alt="">
+        <h1>Books Day</h1>
+    </div>
+    <div id="div7" class="div">
+        <img src="/4-Integration/Notion/geology.png" alt="">
+        <h1>Geology Day</h1>
+    </div>
+
+
     <script>
+        let currentDiv = 0;
+        const divs = document.querySelectorAll('.div');
 
+        function showRandomDiv() {
+            // Hide the current div
+            divs[currentDiv].style.display = 'none';
 
+            // Generate a new random index different from the current one
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * divs.length);
+            } while (randomIndex === currentDiv);
 
-
-
-
-
-
-
-
-        const HOURHAND = document.querySelector("#hour");
-        const MINUTEHAND = document.querySelector("#minute");
-        const SECONDHAND = document.querySelector("#second");
-        const GETREALTIME = document.querySelector("#dateAndTime");
-        const DATEDOTAY = document.getElementById("date")
-        var HOURHAND2 = document.querySelector("#Hours");
-        var MINUTEHAND2 = document.querySelector("#Minutes");
-        var SECONDHAND2 = document.querySelector("#Seconds");
-        var date = new Date();
-
-
-        setInterval(() => {
-            var date = new Date();
-
-
-            console.log(date);
-
-            let hr = date.getHours();
-            let min = date.getMinutes();
-            let sec = date.getSeconds();
-
-
-
-            console.log("Hour: " + hr + " Minute: " + min + " Second: " + sec);
-            let hrPosition = (hr * 360 / 12) + (min * (360 / 60) / 12);
-            let minPosition = (min * 360 / 60) + (sec * (360 / 60) / 60);
-            let secPosition = sec * 360 / 60;
-            function runTheClock() {
-                var date = new Date();
-                let hr = date.getHours();
-                let min = date.getMinutes();
-                let sec = date.getSeconds();
-                let currentHour = function () {
-                    let realHour = 0;
-                    let realHourInPM = 0;
-                    if (hr >= 13) {
-                        realHour = hr - 12;
-                        realHourInPM = `${realHour}`;
-                    }
-                    else {
-                        realHour = hr;
-                        realHourInPM = `${realHour}`;
-                    }
-
-                    return realHourInPM;
-                }
-                hrPosition = hrPosition + (3 / 360);
-                minPosition = minPosition + (6 / 60);
-                secPosition = secPosition + 6;
-            }
-            HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
-            MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
-            SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
-            const interval = setInterval(runTheClock, 1000);
-
-        }, 1000);
-
-
-
-
-
-
-
-
-        // const myTimeout = setTimeout(clock, 5000);
-        // setInterval(clock, 20000);
+            // Show the new random div
+            currentDiv = randomIndex;
+            divs[currentDiv].style.display = 'flex';
+        }
     </script>
 </body>
-
-</html>
 
 </html>
