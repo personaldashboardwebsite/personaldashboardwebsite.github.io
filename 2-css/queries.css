@@ -72,9 +72,9 @@
     #header h1 {
         position: absolute ;
         top: -11px ;
-        left: -33px ;
-        transform: scale(0.65);
-        width: 414px;
+        left: -50px ;
+        transform: scale(0.7);
+        width: 614px;
     }
 
     #container1 {
